@@ -1,0 +1,44 @@
+package org.los_buenos.gestionMultas.persistence.entity;
+import jakarta.persistence.*;
+import lombok.Data;
+
+import java.time.LocalDate;
+
+@Entity
+@Table(name = "Multas")
+@Data
+public class MultasEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer idMulta;
+
+    private Double monto;
+
+    private LocalDate fechaInfraccion;
+
+    private String descripcionMulta;
+
+    @Enumerated(EnumType.STRING)
+    private EstadoMulta estado = EstadoMulta.Pendiente;
+
+    @ManyToOne
+    @JoinColumn(name = "idInfractor")
+    private InfractorEntity infractor;
+
+    @ManyToOne
+    @JoinColumn(name = "idDepartamento")
+    private DepartamentosEntity departamento;
+
+    @ManyToOne
+    @JoinColumn(name = "idVehiculo")
+    private VehiculoEntity vehiculo;
+
+    // Enum para estado
+    public enum EstadoMulta {
+        Pendiente,
+        Pagada,
+        Impugnada
+    }
+}
+
