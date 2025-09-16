@@ -14,6 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/v1/inspectores")
 public class InspectoresController {
+    //Creacion de controller de Inspectores
     private final InspectoresService inspectoresService;
 
     public InspectoresController(InspectoresService inspectoresService) {
