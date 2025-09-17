@@ -28,6 +28,9 @@ public record MultasDto(
         @NotNull(message = "El infractor es obligatorio")
         Integer idInfractor,
 
+        @NotNull(message = "El inspector es obligatorio")
+        Integer idInspector,
+
         @NotNull(message = "El departamento es obligatorio")
         Integer idDepartamento,
 

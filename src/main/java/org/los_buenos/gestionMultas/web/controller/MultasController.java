@@ -41,7 +41,7 @@ public class MultasController {
     public ResponseEntity<MultasDto> actualizarMulta(@PathVariable Integer id, @Valid @RequestBody MultasDto multasDto){
         MultasDto multaExistente = multasService.buscarPorId(id);
         if(multaExistente != null){
-            MultasDto multaActializada = multasService.guardar(new MultasDto(id, multasDto.monto(), multasDto.fechaInfraccion(), multasDto.descripcionMulta(), multasDto.estado(), multasDto.idInfractor(), multasDto.idDepartamento(), multasDto.idVehiculo()));
+            MultasDto multaActializada = multasService.guardar(new MultasDto(id, multasDto.monto(), multasDto.fechaInfraccion(), multasDto.descripcionMulta(), multasDto.estado(), multasDto.idInfractor(), multasDto.idInspector(), multasDto.idDepartamento(), multasDto.idVehiculo()));
             return new ResponseEntity<>(multaActializada, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);

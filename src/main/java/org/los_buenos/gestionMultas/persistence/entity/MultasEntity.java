@@ -27,6 +27,10 @@ public class MultasEntity {
     private InfractorEntity infractor;
 
     @ManyToOne
+    @JoinColumn(name = "idInspector")
+    private InspectoresEntity inspector;
+
+    @ManyToOne
     @JoinColumn(name = "idDepartamento")
     private DepartamentosEntity departamento;
 

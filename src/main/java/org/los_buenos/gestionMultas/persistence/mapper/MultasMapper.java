@@ -17,6 +17,7 @@ public interface MultasMapper {
     @Mapping(source = "descripcionMulta", target = "descripcionMulta")
     @Mapping(source = "estado", target = "estado")
     @Mapping(source = "infractor.idInfractor", target = "idInfractor")
+    @Mapping(source = "inspector.idInspector", target = "idInspector")
     @Mapping(source = "departamento.idDepartamento", target = "idDepartamento")
     @Mapping(source = "vehiculo.idVehiculo", target = "idVehiculo")
     MultasDto toDto(MultasEntity entity);
