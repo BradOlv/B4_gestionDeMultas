@@ -19,8 +19,8 @@ public class MultasEntity {
 
     private String descripcionMulta;
 
-    @Enumerated(EnumType.STRING)
-    private EstadoMulta estado = EstadoMulta.Pendiente;
+    @Column(name = "estado")
+    private String estado;
 
     @ManyToOne
     @JoinColumn(name = "idInfractor")

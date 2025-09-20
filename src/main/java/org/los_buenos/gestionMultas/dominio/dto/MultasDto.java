@@ -4,6 +4,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PositiveOrZero;
 import jakarta.validation.constraints.Positive;
+import org.los_buenos.gestionMultas.dominio.State;
 
 import java.time.LocalDate;
 
@@ -22,8 +23,7 @@ public record MultasDto(
         @NotBlank(message = "La descripción es obligatoria")
         String descripcionMulta,
 
-        @NotBlank(message = "El estado es obligatorio")
-        String estado,
+        State state,
 
         @NotNull(message = "El infractor es obligatorio")
         Integer idInfractor,
