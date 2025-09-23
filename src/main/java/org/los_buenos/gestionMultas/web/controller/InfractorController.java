@@ -5,7 +5,6 @@ import org.los_buenos.gestionMultas.dominio.service.InfractorService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import jakarta.validation.Valid;
 import java.util.List;
 
@@ -41,7 +40,7 @@ public class InfractorController {
     public ResponseEntity<InfractorDto> actualizarInfractor(@PathVariable Integer id, @Valid @RequestBody InfractorDto infractorDto) {
         InfractorDto infractorExistente = infractorService.buscarPorId(id);
         if (infractorExistente != null) {
-            InfractorDto infractorActualizado = infractorService.guardar(new InfractorDto(id, infractorDto.nombreInfractor(), infractorDto.dni(), infractorDto.direccion(), infractorDto.email()));
+            InfractorDto infractorActualizado = infractorService.guardar(new InfractorDto(id, infractorDto.getNombreInfractor(), infractorDto.getDni(), infractorDto.getDireccion(), infractorDto.getEmail()));
             return new ResponseEntity<>(infractorActualizado, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
