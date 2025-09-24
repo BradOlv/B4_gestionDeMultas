@@ -1,5 +1,6 @@
 package org.los_buenos.gestionMultas.persistence.entity;
 import jakarta.persistence.*;
+import java.util.List;
 import lombok.Data;
 
 import java.time.LocalDate;
@@ -37,6 +38,9 @@ public class MultasEntity {
     @ManyToOne
     @JoinColumn(name = "idVehiculo")
     private VehiculoEntity vehiculo;
+
+    @OneToMany(mappedBy = "multa", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<PagosEntity> pagos;
 
     // Enum para estado
     public enum EstadoMulta {

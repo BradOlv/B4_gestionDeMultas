@@ -1,5 +1,5 @@
 package org.los_buenos.gestionMultas.persistence.entity;
-
+import java.util.List;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -14,4 +14,6 @@ public class DepartamentosEntity {
     private String nombreDepartamento;
     private String municipio;
     private String direccionOficinas;
+    @OneToMany(mappedBy = "departamento", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<MultasEntity> multas;
 }
