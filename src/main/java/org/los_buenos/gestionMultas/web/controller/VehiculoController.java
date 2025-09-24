@@ -41,7 +41,7 @@ public class VehiculoController {
     public ResponseEntity<VehiculoDto> actualizarVehiculo(@PathVariable Integer id, @Valid @RequestBody VehiculoDto vehiculoDto) {
         VehiculoDto vehiculoExistente = vehiculoService.buscarPorId(id);
         if (vehiculoExistente != null) {
-            VehiculoDto vehiculoActualizado = vehiculoService.guardar(new VehiculoDto(id, vehiculoDto.matricula(), vehiculoDto.marca(), vehiculoDto.modelo()));
+            VehiculoDto vehiculoActualizado = vehiculoService.guardar(new VehiculoDto(id, vehiculoDto.getMatricula(), vehiculoDto.getMarca(), vehiculoDto.getModelo()));
             return new ResponseEntity<>(vehiculoActualizado, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);

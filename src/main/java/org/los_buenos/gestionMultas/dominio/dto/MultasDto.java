@@ -4,37 +4,42 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PositiveOrZero;
 import jakarta.validation.constraints.Positive;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.los_buenos.gestionMultas.dominio.State;
 
 import java.time.LocalDate;
 
-public record MultasDto(
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class MultasDto{
 
         @PositiveOrZero
-        Integer idMulta,
+        Integer idMulta;
 
         @NotNull(message = "El monto es obligatorio")
         @PositiveOrZero(message = "El monto no puede ser negativo")
-        Double monto,
+        Double monto;
 
         @NotNull(message = "La fecha de infracción es obligatoria")
-        LocalDate fechaInfraccion,
+        LocalDate fechaInfraccion;
 
         @NotBlank(message = "La descripción es obligatoria")
-        String descripcionMulta,
+        String descripcionMulta;
 
-        State state,
+        State state;
 
         @NotNull(message = "El infractor es obligatorio")
-        Integer idInfractor,
+        Integer idInfractor;
 
         @NotNull(message = "El inspector es obligatorio")
-        Integer idInspector,
+        Integer idInspector;
 
         @NotNull(message = "El departamento es obligatorio")
-        Integer idDepartamento,
+        Integer idDepartamento;
 
         @NotNull(message = "El vehículo es obligatorio")
-        Integer idVehiculo
-) {
+        Integer idVehiculo;
 }

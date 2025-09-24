@@ -44,7 +44,7 @@ public class InspectoresController {
     public ResponseEntity<InspectoresDto> actualizarInspector(@PathVariable Integer id, @Valid @RequestBody InspectoresDto inspectoresDto){
         InspectoresDto inspectoresExistente = inspectoresService.buscarPorId(id);
         if (inspectoresExistente != null ){
-            InspectoresDto inspectoresActualizado = inspectoresService.guardar(new InspectoresDto(id, inspectoresDto.nombreInspector(),inspectoresDto.numeroPlaca()));
+            InspectoresDto inspectoresActualizado = inspectoresService.guardar(new InspectoresDto(id, inspectoresDto.getNombreInspector(),inspectoresDto.getNumeroPlaca()));
             return new ResponseEntity<>(inspectoresActualizado, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
