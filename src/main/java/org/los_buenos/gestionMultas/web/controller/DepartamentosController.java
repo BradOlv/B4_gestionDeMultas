@@ -41,7 +41,7 @@ public class DepartamentosController {
     public ResponseEntity<DepartamentosDto> actualizarDepartamento(@PathVariable Integer id, @Valid @RequestBody DepartamentosDto departamentosDto){
         DepartamentosDto departamentoExistente = departamentosService.buscarPorId(id);
         if(departamentoExistente != null){
-            DepartamentosDto departamentoActualizado = departamentosService.guardar(new DepartamentosDto(id, departamentosDto.nombreDepartamento(), departamentosDto.municipio(), departamentosDto.direccionOficinas()));
+            DepartamentosDto departamentoActualizado = departamentosService.guardar(new DepartamentosDto(id, departamentosDto.getNombreDepartamento(), departamentosDto.getMunicipio(), departamentosDto.getDireccionOficinas()));
             return new ResponseEntity<>(departamentoActualizado, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
