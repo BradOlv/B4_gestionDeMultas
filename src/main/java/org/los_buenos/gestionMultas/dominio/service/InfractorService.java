@@ -4,6 +4,7 @@ import lombok.Data;
 import org.los_buenos.gestionMultas.dominio.dto.InfractorDto;
 import org.los_buenos.gestionMultas.dominio.repository.InfractorRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
@@ -23,7 +24,10 @@ public class InfractorService {
         return this.infractorRepository.guardar(infractorDto);
     }
 
+
+    @Transactional
     public void eliminar(Integer id) {
         this.infractorRepository.eliminar(id);
     }
+
 }
