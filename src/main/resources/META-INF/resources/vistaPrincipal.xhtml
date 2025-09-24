@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<h:html xmlns:h="http://xmlns.jcp.org/jsf/html"
+        xmlns:f="http://xmlns.jcp.org/jsf/core"
+        xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Gestión de Multas - Los Buenos</title>
+        <link rel="stylesheet" href="https://unpkg.com/primeflex@latest/primeflex.css"/>
+        <link rel="stylesheet" href="https://unpkg.com/primeflex/themes/primeone-dark.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+        <style type="text/css">
+            body {
+                background-color: #1a1a1a;
+                color: #e0e0e0;
+                font-family: 'Roboto', sans-serif;
+            }
+
+            .main-title {
+                color: #3b82f6;
+                font-weight: 700;
+                letter-spacing: 2px;
+            }
+
+            .subtitle {
+                color: #a1a1aa;
+                font-weight: 300;
+                letter-spacing: 0.5px;
+            }
+
+            .menu-card {
+                background: rgba(30, 30, 30, 0.95);
+                border: 1px solid #444444;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            }
+
+            /* Custom button styling */
+            .ui-button {
+                background: #3b82f6 !important;
+                border: 1px solid #3b82f6 !important;
+                font-weight: 600 !important;
+                font-size: 0.9rem !important;
+                transition: all 0.3s ease !important;
+                width: 100% !important;
+                height: 80px !important;
+            }
+
+            .ui-button:hover {
+                background: #2563eb !important;
+                border-color: #2563eb !important;
+                transform: translateY(-2px) !important;
+                box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3) !important;
+            }
+
+            .ui-button:active {
+                transform: translateY(0px) !important;
+            }
+
+            .ui-button .fas {
+                font-size: 1.3rem !important;
+            }
+
+            /* Footer */
+            .footer-text {
+                color: #6b7280;
+                font-size: 0.85rem;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <div class="flex align-items-center justify-content-center min-h-screen p-4">
+            <div class="flex flex-column align-items-center">
+
+                <div class="text-center mb-4">
+                    <h1 class="main-title text-6xl m-0 mb-2">GESTIÓN DE MULTAS</h1>
+                    <p class="subtitle text-xl m-0">Sistema de Administración</p>
+                </div>
+
+                <div class="menu-card border-round-xl p-4 w-full" style="max-width: 500px;">
+
+                    <div class="text-center mb-4">
+                        <h3 class="text-primary text-xl font-semibold m-0">Menú Principal</h3>
+                    </div>
+
+                    <div class="grid">
+                        <div class="col-6 p-2">
+                            <p:button value="Departamentos" icon="fas fa-building"
+                                      outcome="departamentos" styleClass="ui-button-primary flex flex-column align-items-center justify-content-center gap-2" />
+                        </div>
+
+                        <div class="col-6 p-2">
+                            <p:button value="Infractores" icon="fas fa-user-slash"
+                                      outcome="infractores" styleClass="ui-button-primary flex flex-column align-items-center justify-content-center gap-2" />
+                        </div>
+
+                        <div class="col-6 p-2">
+                            <p:button value="Inspectores" icon="fas fa-user-shield"
+                                      outcome="inspectores" styleClass="ui-button-primary flex flex-column align-items-center justify-content-center gap-2" />
+                        </div>
+
+                        <div class="col-6 p-2">
+                            <p:button value="Multas" icon="fas fa-file-invoice-dollar"
+                                      outcome="multas" styleClass="ui-button-primary flex flex-column align-items-center justify-content-center gap-2" />
+                        </div>
+
+                        <div class="col-6 p-2">
+                            <p:button value="Pagos" icon="fas fa-credit-card"
+                                      outcome="pagos" styleClass="ui-button-primary flex flex-column align-items-center justify-content-center gap-2" />
+                        </div>
+
+                        <div class="col-6 p-2">
+                            <p:button value="Vehículos" icon="fas fa-car-side"
+                                      outcome="vehiculo" styleClass="ui-button-primary flex flex-column align-items-center justify-content-center gap-2" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-4">
+                    <p class="footer-text m-0">© 2025 Sistema de Gestión de Multas - Los Buenos</p>
+                </div>
+
+            </div>
+        </div>
+    </h:body>
+</h:html>
