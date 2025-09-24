@@ -32,6 +32,18 @@ public class MultasEntityRepository implements MultasRepository {
     }
 
     @Override
+    public List<MultasDto> buscarPorIdVehiculo(Integer idVehiculo) {
+        List<MultasEntity> multas = crudMultasRepository.findByVehiculo_IdVehiculo(idVehiculo);
+        return multasMapper.toDto(multas);
+    }
+
+    @Override
+    public List<MultasDto> buscarPorIdInfractor(Integer idInfractor) {
+        List<MultasEntity> multas = crudMultasRepository.findByInfractor_IdInfractor(idInfractor);
+        return multasMapper.toDto(multas);
+    }
+
+    @Override
     public MultasDto guardar(MultasDto multasDto) {
         MultasEntity multa = this.multasMapper.toEntity(multasDto);
         return this.multasMapper.toDto(this.crudMultasRepository.save(multa));

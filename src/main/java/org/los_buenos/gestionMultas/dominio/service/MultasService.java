@@ -26,4 +26,6 @@ public class MultasService {
     public List<InspectoresDto> obtenerInspectores() { return inspectorRepository.obtenerTodo(); }
     public List<DepartamentosDto> obtenerDepartamentos() { return departamentoRepository.obtenerTodo(); }
     public List<VehiculoDto> obtenerVehiculos() { return vehiculoRepository.obtenerTodo(); }
+    public List<MultasDto> buscarPorIdVehiculo(Integer idVehiculo) {return multasRepository.buscarPorIdVehiculo(idVehiculo);}
+    public List<MultasDto> buscarPorIdInfractor(Integer idInfractor) {return multasRepository.buscarPorIdInfractor(idInfractor);}
 }

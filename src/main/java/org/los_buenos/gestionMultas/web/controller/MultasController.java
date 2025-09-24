@@ -58,4 +58,22 @@ public class MultasController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+
+    @GetMapping("/por-idvehiculo/{idVehiculo}")
+    public ResponseEntity<List<MultasDto>> obtenerMultasPorIdVehiculo(@PathVariable Integer idVehiculo) {
+        List<MultasDto> multas = multasService.buscarPorIdVehiculo(idVehiculo);
+        if (multas.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(multas, HttpStatus.OK);
+    }
+
+    @GetMapping("/por-idinfractor/{idInfractor}")
+    public ResponseEntity<List<MultasDto>> obtenerMultasPorIdInfractor(@PathVariable Integer idInfractor) {
+        List<MultasDto> multas = multasService.buscarPorIdInfractor(idInfractor);
+        if (multas.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(multas, HttpStatus.OK);
+    }
 }

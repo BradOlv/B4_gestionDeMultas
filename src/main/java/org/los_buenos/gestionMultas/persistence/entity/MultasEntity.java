@@ -42,11 +42,5 @@ public class MultasEntity {
     @OneToMany(mappedBy = "multa", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<PagosEntity> pagos;
 
-    // Enum para estado
-    public enum EstadoMulta {
-        Pendiente,
-        Pagada,
-        Impugnada
-    }
 }
 
