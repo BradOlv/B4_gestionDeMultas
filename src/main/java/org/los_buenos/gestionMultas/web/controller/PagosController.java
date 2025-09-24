@@ -41,7 +41,7 @@ public class PagosController {
     public ResponseEntity<PagosDto> actualizarPago(@PathVariable Integer id, @Valid @RequestBody PagosDto pagosDto){
         PagosDto pagoExistente = pagosService.buscarPorId(id);
         if(pagoExistente != null){
-            PagosDto pagoActualizado = pagosService.guardar(new PagosDto(id, pagosDto.fechaPago(), pagosDto.montoPagado(), pagosDto.metodoPago(), pagosDto.idMulta()));
+            PagosDto pagoActualizado = pagosService.guardar(new PagosDto(id, pagosDto.getFechaPago(), pagosDto.getMontoPagado(), pagosDto.getMetodoPago(), pagosDto.getIdMulta()));
             return new ResponseEntity<>(pagoActualizado, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
